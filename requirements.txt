@@ -1,0 +1,60 @@
+# Core Data Science
+numpy
+pandas
+scipy
+
+# Data Visualization
+matplotlib
+seaborn
+plotly
+
+# Machine Learning
+scikit-learn
+xgboost
+
+# Statistics
+statsmodels
+
+# Jupyter
+jupyter
+jupyterlab
+ipykernel
+notebook
+
+# Excel / Data Files
+openpyxl
+xlsxwriter
+pyarrow
+fastparquet
+
+# SQL / Databases
+sqlalchemy
+psycopg2-binary
+
+# APIs / Web
+requests
+httpx
+
+# Utilities
+tqdm
+joblib
+python-dotenv
+
+# NLP
+nltk
+spacy
+
+# Deep Learning
+tensorflow
+torch
+torchvision
+torchaudio
+
+# Dashboards / Apps
+streamlit
+
+# Notebook Utilities
+nbformat
+
+joblib
+shap
