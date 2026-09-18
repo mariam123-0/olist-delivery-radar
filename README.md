@@ -328,9 +328,9 @@ Open `powerbi/powerbi_dashboard.pbix` in Power BI Desktop, or view the static ex
 
 ## 👤 Author
 
-**[Your Name]**
-📧 [your.email@example.com]
-🔗 [LinkedIn](https://linkedin.com/in/your-profile) · [GitHub](https://github.com/your-username)
+**[Mariam Tarek]**
+📧 [mariam.tarek8122005@gmail.com]
+🔗 [LinkedIn](https://www.linkedin.com/in/mariam-tarek-a2261b321/)
 
 ---
 
