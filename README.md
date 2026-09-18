@@ -169,7 +169,7 @@ An interactive dashboard summarizing delivery performance, revenue trends, and c
 - **Orders by Delivery Status** — On Time / Late / Not Delivered split
 
 ### DAX reference
-Every calculated column and measure used in this dashboard — organized by table, with dependency notes — is documented in full: **[`powerbi/olist_powerbi_dax_reference.md`](./powerbi/olist_powerbi_dax_reference.md)**
+Every calculated column and measure used in this dashboard — organized by table, with dependency notes — is documented in full: **[`powerbi/olist_powerbi_dax_reference.md`](https://github.com/mariam123-0/olist-delivery-radar/blob/e6a99f7e7e0d2e86709f6fa5b33524bf916fb301/powerbi/Olist_PowerBI_DAX_Reference.md)**
 
 Includes columns like `Delivery Status`, `Delivery Delay (Days)`, `Order Month`, `Review Sentiment`, `Region`, `Product Size Category`, and measures like `Total Orders`, `Average Delivery Time`, `Cancellation Rate`, and `Late Delivery %`.
 
