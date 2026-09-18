@@ -211,9 +211,6 @@ XGBoost outperformed the baseline on every single metric, confirming the added m
 Beyond raw accuracy, **SHAP (SHapley Additive exPlanations)** was used to explain *individual* predictions — critical for a business-facing tool, since "the model says it's risky" is far less useful than "the model says it's risky **because** the estimated delivery window is unusually tight."
 
 ![SHAP Waterfall Explanation](https://github.com/mariam123-0/olist-delivery-radar/blob/c1db9a00adce041f7221e59e1b1d1398d80568df/assests/screenshots/shap_waterfall.png)
-
-Red bars push a prediction toward "Late," blue bars push it toward "On Time" — giving full transparency into what's driving each individual risk score, not just a black-box probability.
-
 ---
 
 ## Step 5 — Deployment: Streamlit App
