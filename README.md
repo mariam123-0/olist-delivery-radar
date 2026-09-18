@@ -2,7 +2,6 @@
 
 An end-to-end data project on the **Brazilian E-Commerce (Olist) dataset** (~100K real orders), covering the full pipeline from raw CSVs to a deployed, interactive machine learning app:
 
-**PostgreSQL & Data Modeling (DBeaver) → SQL Analysis → Python (EDA & KPIs) → Power BI Dashboard → Machine Learning (XGBoost) → Streamlit Deployment**
 
 > 🎯 **Core business question:** Can we predict whether an order will arrive **late** — before it even ships — so operations teams can act proactively instead of reactively?
 
@@ -28,11 +27,7 @@ An end-to-end data project on the **Brazilian E-Commerce (Olist) dataset** (~100
 
 Data moves through five stages, each one handing its output to the next:
 
-![Architecture Pipeline](assets/screenshots/architecture_pipeline.png)
-
-Each stage is documented in its own section below, with the actual outputs (screenshots, SQL, DAX, model metrics) included.
-
-> 📸 **Note on screenshots:** the images referenced throughout this README live in `assets/screenshots/` — copy your exported PNGs there (ERD, DBeaver, dashboard, SHAP plots, app screens) using the file names referenced below, or update the paths to match your own naming.
+![image altr](https://github.com/mariam123-0/olist-delivery-radar/blob/b3cc3e92acbe1aee9435c21662da7085c2017c6d/Pipeline.png)
 
 ---
 
@@ -43,7 +38,6 @@ Olist/
 │
 ├── README.md
 ├── requirements.txt
-├── .gitignore
 │
 ├── assets/
 │   └── screenshots/                          # README images (ERD, dashboard, app, SHAP, etc.)
@@ -105,12 +99,12 @@ Before any analysis, the raw CSVs were loaded into a **PostgreSQL** database and
 ### Entity-Relationship Diagram (ERD)
 Built directly in DBeaver's schema diagram tool to map out how the 9 tables connect through primary/foreign keys:
 
-![ERD Diagram](assets/screenshots/ERD.png)
+![image alter](https://github.com/mariam123-0/olist-delivery-radar/blob/b3cc3e92acbe1aee9435c21662da7085c2017c6d/assests/screenshots/ERD.png)
 
 ### Database & table inspection in DBeaver
 Verified row counts and table structure directly against the live PostgreSQL schema before writing any queries:
 
-![DBeaver Table Overview](assets/screenshots/DBeaver.png)
+![image alter](https://github.com/mariam123-0/olist-delivery-radar/blob/b3cc3e92acbe1aee9435c21662da7085c2017c6d/assests/screenshots/DBeaver.png)
 
 ### SQL work breakdown (`sql/`)
 
@@ -164,7 +158,7 @@ ORDER BY total_orders DESC;
 
 An interactive dashboard summarizing delivery performance, revenue trends, and customer behavior — built with **Power Query** (data cleaning/locale fixes) and **DAX** (calculated columns + measures).
 
-![Power BI Dashboard](assets/screenshots/DashBoard.png)
+![image alter](https://github.com/mariam123-0/olist-delivery-radar/blob/b3cc3e92acbe1aee9435c21662da7085c2017c6d/assests/screenshots/DashBoard.png)
 
 **Dashboard highlights:**
 - **Total Orders / Total Revenue** KPI cards
@@ -176,10 +170,6 @@ An interactive dashboard summarizing delivery performance, revenue trends, and c
 
 ### DAX reference
 Every calculated column and measure used in this dashboard — organized by table, with dependency notes — is documented in full: **[`powerbi/olist_powerbi_dax_reference.md`](./powerbi/olist_powerbi_dax_reference.md)**
-
-**Full inventory of what was built:**
-
-![DAX Inventory Checklist](assets/screenshots/AnalysisStructure.png)
 
 Includes columns like `Delivery Status`, `Delivery Delay (Days)`, `Order Month`, `Review Sentiment`, `Region`, `Product Size Category`, and measures like `Total Orders`, `Average Delivery Time`, `Cancellation Rate`, and `Late Delivery %`.
 
@@ -207,8 +197,6 @@ Predict, **at the time of purchase**, whether an order will arrive after its est
 
 ### Results — baseline vs. main model
 
-![Model Comparison](assets/screenshots/CompairModels.png)
-
 | Metric | Logistic Regression | XGBoost | Improvement |
 |---|---:|---:|---:|
 | Precision (Late) | 0.13 | **0.20** | +54% |
@@ -222,7 +210,7 @@ XGBoost outperformed the baseline on every single metric, confirming the added m
 ### Explainability with SHAP
 Beyond raw accuracy, **SHAP (SHapley Additive exPlanations)** was used to explain *individual* predictions — critical for a business-facing tool, since "the model says it's risky" is far less useful than "the model says it's risky **because** the estimated delivery window is unusually tight."
 
-![SHAP Waterfall Explanation](assets/screenshots/2_singlePrediction.png)
+![SHAP Waterfall Explanation](https://github.com/mariam123-0/olist-delivery-radar/blob/c1db9a00adce041f7221e59e1b1d1398d80568df/assests/screenshots/shap_waterfall.png)
 
 Red bars push a prediction toward "Late," blue bars push it toward "On Time" — giving full transparency into what's driving each individual risk score, not just a black-box probability.
 
@@ -235,12 +223,13 @@ The trained model was deployed as a fully interactive web app — not just a Jup
 ### 🔮 Single Prediction
 A form-based interface to score one order at a time, with a live risk gauge and instant feedback:
 
-![Single Prediction](assets/screenshots/1_SinglePrediction.png)
+![Single Prediction](https://github.com/mariam123-0/olist-delivery-radar/blob/19c9a5e1ce9dc641a20dfe29bfb655a7103b5f86/assests/screenshots/1.SinglePrediction.png)
+![image alter](https://github.com/mariam123-0/olist-delivery-radar/blob/19c9a5e1ce9dc641a20dfe29bfb655a7103b5f86/assests/screenshots/2.singlePrediction.png)
 
 ### 📁 Batch Prediction
 Upload a CSV of multiple orders and get late-delivery probabilities for all of them at once, with color-coded risk and a downloadable results file:
 
-![Batch Prediction](assets/screenshots/BatchPrediction.png)
+![Batch Prediction](https://github.com/mariam123-0/olist-delivery-radar/blob/19c9a5e1ce9dc641a20dfe29bfb655a7103b5f86/assests/screenshots/BatchPrediction.png)
 
 **App features:**
 - Adjustable **decision threshold** slider (live precision/recall tradeoff control)
@@ -326,12 +315,5 @@ Open `powerbi/powerbi_dashboard.pbix` in Power BI Desktop, or view the static ex
 
 ---
 
-## 👤 Author
-
-**[Mariam Tarek]**
 📧 [mariam.tarek8122005@gmail.com]
 🔗 [LinkedIn](https://www.linkedin.com/in/mariam-tarek-a2261b321/)
-
----
-
-*This project was built as a three-part series — SQL/Database Design → Python & Power BI Analysis → Machine Learning & Deployment — demonstrating a complete, end-to-end data workflow from raw data to a production-style interactive tool.*
